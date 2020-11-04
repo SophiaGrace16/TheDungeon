@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     end
 
     def playerlogin
-       render '/players/login'
+       render :'/players/login'
     end
 
     def playercreate
@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     end
 
     def dmlogin
+        render :'/dms/login'
     end
     
     def dmcreate

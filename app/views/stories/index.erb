@@ -1,0 +1,14 @@
+<h1>Your Collection of Stories:</h1>
+
+<p>
+<% @stories.each do |story| %>
+    <li>
+    <a href="/stories/<%= story.id %>"><%= story.title %></a>
+    </li>
+    <br>
+<%end%>
+</p>
+
+<h5><%= link_to new_story_path "Create a new story!"%></h5>
+<br><br>
+<p> Don't smile too much... they will know you are up to something! </p>
