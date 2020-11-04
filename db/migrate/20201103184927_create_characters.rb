@@ -9,7 +9,8 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :alignment
       t.integer :exp
       t.integer :str
-      t.integercon :dex
+      t.integer :con
+      t.integer :dex
       t.integer :inte
       t.integer :wis
       t.integer :chari
