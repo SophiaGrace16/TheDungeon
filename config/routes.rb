@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/dm/login' => 'sessions#dmcreate'
   get '/player/signup' => 'players#signup'
   get '/dm/signup' => 'dms#signup'
+  delete '/logout' => 'sessions#destroy'
 
   resources :characters, :stories, :games, :players, :dms
 end

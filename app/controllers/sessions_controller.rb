@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
         else
           redirect_to players_login_path
         end
-      end
     end
 
     def dmlogin

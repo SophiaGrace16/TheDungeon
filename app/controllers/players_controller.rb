@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
         @player = Player.new(player_params)
         if @player.save
             session[:player_id] = @player.id
-            redirect_to stories_path(@player)
+            redirect_to characters_path(@player)
         else
             render :'players/signup'
         end
