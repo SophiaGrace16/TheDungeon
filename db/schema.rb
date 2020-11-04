@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_200730) do
     t.text "loot_found"
     t.integer "exp_gained"
     t.date "date_started"
+    t.text "game_notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dm_id"], name: "index_games_on_dm_id"

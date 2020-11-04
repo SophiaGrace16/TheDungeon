@@ -8,6 +8,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.text :loot_found
       t.integer :exp_gained
       t.date :date_started
+      t.text :game_notes
 
       t.timestamps
     end
