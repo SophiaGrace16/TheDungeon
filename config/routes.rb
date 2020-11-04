@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/' => 'sessions#welcome'
-  get '/player/login' => 'sessions#playernew'
-  get '/dm/login' => 'sessions#dmnew'
-  get '/player/login' => 'sessions#playercreate'
-  get '/dm/login' => 'sessions#dmcreate'
-  get '/player/signup' => 'players#new'
-  get '/dm/signup' => 'dms#new'
+  get '/player/login' => 'sessions#playerlogin'
+  get '/dm/login' => 'sessions#dmlogin'
+  post '/player/login' => 'sessions#playercreate'
+  post '/dm/login' => 'sessions#dmcreate'
+  get '/player/signup' => 'players#signup'
+  get '/dm/signup' => 'dms#signup'
 
-  resources :characters, :stories, :games
+  resources :characters, :stories, :games, :players, :dms
 end
