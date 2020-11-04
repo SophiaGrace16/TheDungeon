@@ -3,12 +3,12 @@
 <p>
 <% @stories.each do |story| %>
     <li>
-    <a href="/stories/<%= story.id %>"><%= story.title %></a>
+    <%= link_to story.name, stories %>
     </li>
     <br>
 <%end%>
 </p>
 
-<h5><%= link_to new_story_path "Create a new story!"%></h5>
+<%= link_to 'Create a new story!', new_story_path%>
 <br><br>
 <p> Don't smile too much... they will know you are up to something! </p>

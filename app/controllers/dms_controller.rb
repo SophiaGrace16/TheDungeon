@@ -9,7 +9,7 @@ class DmsController < ApplicationController
             session[:dm_id] = @dm.id
             redirect_to stories_path(@dm)
         else
-            render :'dm/signup'
+            render :'dms/signup'
         end
     end
 
