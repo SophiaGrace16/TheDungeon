@@ -2,8 +2,8 @@ class CreateGames < ActiveRecord::Migration[6.0]
   def change
     create_table :games do |t|
       t.boolean :active
-      t.integer :dm_id
-      t.integer :player_id
+      t.belongs_to :dm
+      t.belongs_to :player
       t.string :camp_name
       t.text :loot_found
       t.integer :exp_gained

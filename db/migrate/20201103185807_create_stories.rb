@@ -11,7 +11,7 @@ class CreateStories < ActiveRecord::Migration[6.0]
       t.string :story_link
       t.text :summary
       t.string :difficulty
-      t.integer :dm_id
+      t.belongs_to :dm
 
       t.timestamps
     end

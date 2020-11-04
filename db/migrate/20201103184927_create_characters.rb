@@ -45,7 +45,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.text :class_info
       t.text :bg_story
       t.text :lvl_gain
-      t.integer :player_id
+      t.belongs_to :player
 
       t.timestamps
     end

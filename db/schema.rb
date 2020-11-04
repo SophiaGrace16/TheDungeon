@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_200730) do
     t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_characters_on_player_id"
   end
 
   create_table "dms", force: :cascade do |t|
@@ -80,6 +81,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_200730) do
     t.date "date_started"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dm_id"], name: "index_games_on_dm_id"
+    t.index ["player_id"], name: "index_games_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -104,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_200730) do
     t.integer "dm_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dm_id"], name: "index_stories_on_dm_id"
   end
 
 end
