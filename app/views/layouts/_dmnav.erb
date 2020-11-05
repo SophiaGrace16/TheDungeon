@@ -1,12 +1,13 @@
 <% if !dm_logged_in? %>
 <ul>
-    <li><%= link_to "Sign Up", dm_signup_path  %></li>
-    <li><%= link_to "Log in", dm_login_path %></li>
+    <%= link_to "Need to Signup?", dm_signup_path%>
+    <%= link_to "Home", "/"%>  
 <% else %>
-    <li><%= link_to "Log out", dm_logout_path, method: :delete %></li>
+    Hey there <%= current_dm.username %>
+    <%= link_to "Log out", dm_logout_path, method: :delete %>
+    <%= link_to "Home", "/"%>
 </ul>
 <% end %>
 
-<% if dm_logged_in? %>
-    <h2>Hey there <%= current_dm.username %></h2>
-<% end %>
+<h6> Don't smile too much... they will know you are up to something! </h6>
+

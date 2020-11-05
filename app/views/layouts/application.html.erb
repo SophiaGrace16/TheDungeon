@@ -13,13 +13,15 @@
     <%= yield %>
   </body>
 
- 
-    <%player_or_dm%>
-    <%if player_logged_in? == true%>
-            <render 'playernav'>
-    <%else dm_logged_in? == true%>
-            <render 'dmnav'>
+  <footer>
+    <%if current_player%>
+        <%=render 'layouts/playernav'%>
+    <%elsif current_dm%>
+        <%=render 'layouts/dmnav'%>
+    <%else%>
     <%end%>
+  
+  </footer>
 
 
 </html>
