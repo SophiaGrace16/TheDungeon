@@ -1,0 +1,3 @@
+<%= link_to "See all your characters!", characterss_path%>
+<%= link_to "Need to Edit your Story?", edit_character_path%>
+<%= link_to("Delete this Character?", @character, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>
