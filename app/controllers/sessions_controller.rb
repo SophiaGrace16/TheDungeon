@@ -3,16 +3,17 @@ class SessionsController < ApplicationController
     end
 
     def playerlogin
-       render :'/players/login'
+        render :'/players/login'
     end
 
     def playercreate
-        @player = Player.find_by(username: params[:username])
-        if @player && @player.authenticate(params[:password])
+        @player = Player.find_by(username: params[:player][:username])
+        # binding.pry
+        if @player && @player.authenticate(params[:player][:password])
           session[:player_id] = @player.id
           redirect_to characters_path
         else
-          redirect_to players_login_path
+          redirect_to player_login_path
         end
     end
 
@@ -21,17 +22,22 @@ class SessionsController < ApplicationController
     end
     
     def dmcreate
-        @dm = Dm.find_by(username: params[:username])
-        if @dm && @dm.authenticate(params[:password])
+        @dm = Dm.find_by(username: params[:dm][:username])
+        if @dm && @dm.authenticate(params[:dm][:password])
           session[:dm_id] = @dm.id
           redirect_to stories_path
         else
-          redirect_to dms_login_path
+          redirect_to dm_login_path
         end
       end
     
-      def destroy
+      def playerdestroy
         session.clear
-        redirect_to '/welcome'
+        redirect_to '/'
+      end
+
+      def dmdestroy
+        session.clear
+        redirect_to '/'
       end
 end
