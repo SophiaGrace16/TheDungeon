@@ -1,12 +1,12 @@
 <% if !dm_logged_in? %>
 <ul>
-    <li><%= link_to "Sign Up", new_dm_path  %></li>
-    <li><%= link_to "Log in", login_dm_path %></li>
+    <li><%= link_to "Sign Up", dm_signup_path  %></li>
+    <li><%= link_to "Log in", dm_login_path %></li>
 <% else %>
-    <li><%= link_to "Log out", logout_dm_path, method: :delete %></li>
+    <li><%= link_to "Log out", dm_logout_path, method: :delete %></li>
 </ul>
 <% end %>
 
-<% if logged_in? %>
+<% if dm_logged_in? %>
     <h2>Hey there <%= current_dm.username %></h2>
 <% end %>

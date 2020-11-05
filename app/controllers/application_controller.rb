@@ -4,10 +4,11 @@ class ApplicationController < ActionController::Base
     helper_method :current_player
     helper_method :dm_logged_in?
     helper_method :current_dm
+    helper_method :player_or_dm
 
     def current_player
         @player ||= Player.find_by_id(session[:player_id])
-      end
+    end
     
     def player_logged_in?
         !current_player.nil?
@@ -19,6 +20,10 @@ class ApplicationController < ActionController::Base
     
     def dm_logged_in?
         !current_dm.nil?
+    end
+
+    def player_or_dm
+        player_logged_in? || dm_logged_in?
     end
     
 end

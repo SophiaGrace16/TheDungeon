@@ -13,15 +13,4 @@
 <br><br>
 
 <p> Don't smile too much... they will know you are up to something! </p>
-<% if !player_logged_in? %>
-<ul>
-    <li><%= link_to "Sign Up", new_player_path  %></li>
-    <li><%= link_to "Log in", player_login_path %></li>
-<% else %>
-    <li><%= link_to "Log out", player_logout_path, method: :delete %></li>
-</ul>
-<% end %>
 
-<% if player_logged_in? %>
-    <h2>Hey there <%= current_player.username %></h2>
-<% end %>
