@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
     helper_method :current_player
     helper_method :dm_logged_in?
     helper_method :current_dm
+    helper_method :redirect_if_player_not_logged_in
+    helper_method :redirect_if_dm_not_logged_in
     helper_method :player_or_dm
 
     def current_player
@@ -23,7 +25,20 @@ class ApplicationController < ActionController::Base
     end
 
     def player_or_dm
-        player_logged_in? || dm_logged_in?
+        current_dm || current_player
+    end
+
+    def redirect_if_player_not_logged_in 
+        #checks if they player is logged in and then if they arent it redirects them if they are not
+        if !player_logged_in?
+          redirect_to players_login_path
+        end
+    end
+
+    def redirect_if_dm_not_logged_in
+        if !dm_logged_in?
+          redirect_to dm_login_path
+        end
     end
     
 end
