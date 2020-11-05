@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_182530) do
+ActiveRecord::Schema.define(version: 2020_11_05_230611) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.string "class"
+    t.string "character_class"
     t.integer "level"
     t.string "background"
     t.string "race"

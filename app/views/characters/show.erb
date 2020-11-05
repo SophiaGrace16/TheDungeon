@@ -1,138 +1,137 @@
 <h1>Take a Look! Here is your Character!</h1>
 
-Name:
+<b>Name:</b>
 <%= @character.name %>
 </br>
-Class:
-<%= @character.class %>
+<b>Class:</b>
+<%= @character.character_class %>
 </br>
-Level:
+<b>Level:</b>
 <%= @character.level %>
 </br>
-Background:
+<b>Background:</b>
 <%= @character.background %>
 </br>
-Race:
+<b>Race:</b>
 <%= @character.race %>
 </br>
-Alignment:
+<b>Alignment:</b>
 <%= @character.alignment %>
 </br>
-Experience Points:
+<b>Experience Points:</b>
 <%= @character.exp %>
 </br>
-Strength:
+<b>Strength:</b>
 <%= @character.str %>
 </br>
-Constitution:
+<b>Constitution:</b>
 <%= @character.con %>
 </br>
-Dexterity:
+<b>Dexterity:</b>
 <%= @character.dex %>
 </br>
-Intelligence:
-<%= @character.int %>
+<b>Intelligence:</b>
+<%= @character.inte %>
 </br>
-Wisdom:
+<b>Wisdom:</b>
 <%= @character.wis %>
 </br>
-Charisma:
+<b>Charisma:</b>
 <%= @character.chari %>
 </br>
-Strength Modifier:
+<b>Strength Modifier:</b>
 <%= @character.str_mod%>
 </br>
-Dexterity Modifier:
+<b>Dexterity Modifier:</b>
 <%= @character.dex_mod%>
 </br>
-Constitution Modifier:
+<b>Constitution Modifier:</b>
 <%= @character.con_mod %>
 </br>
-Intelligence Modifier:
+<b>Intelligence Modifier:</b>
 <%= @character.inte_mod %>
 </br>
-Wisdom Modifier:
+<b>Wisdom Modifier:</b>
 <%= @character.wis_mod %>
 </br>
-Charisma Modifer:
+<b>Charisma Modifer:</b>
 <%= @character.chari_mod %>
 </br>
-Passive Wisdom: 
+<b>Passive Wisdom:</b> 
 <%= @character.passive_wis %>
 </br>
-Proficiencies:
+<b>Proficiencies:</b>
 <%= @character.proficiencies %>
 </br>
-Language:
+<b>Language:</b>
 <%= @character.lang %>
 </br>
-Armor_Class:
+<b>Armor_Class:</b>
 <%= @character.armor_class %>
 </br>
-Initiative:
+<b>Initiative:</b>
 <%= @character.initiative %>
 </br>
-Speed:
+<b>Speed:</b>
 <%= @character.speed %>
 </br>
-Maximum Hit Points:
+<b>Maximum Hit Points:</b>
 <%= @character.hit_pt_max%>
 </br>
-Hit Dice:
-<%= @character.hit_Dice %>e %>
+<b>Hit Dice:</b>
+<%= @character.hit_dice %>e %>
 </br>
-Spell Name:
+<b>Spell Name:</b>
 <%= @character.spellname %>me %>
 </br>
-Spell Description:
+<b>Spell Description:</b>
 <%= @character.spell_desc %>
 </br>
-Armor Description:
+<b>Armor Description:</b>
 <%= @character.arm_desc %>
 </br>
-CP:
+<b>CP:</b>
 <%= @character.cp %>
 </br>
-SP:
+<b>SP:</b>
 <%= @character.sp %>
 </br>
-EP:
+<b>EP:</b>
 <%= @character.ep %>
-</br>
-GP:
+<b>GP:</b>
 <%= @character.gp %>
 </br>
-PP:
+<b>PP:</b>
 <%= @character.pp %>
 </br>
-Personality Traits:
+<b>Personality Traits:</b>
 <%= @character.personality_traits %>
 </br>
-Ideas:
+<b>Ideals:</b>
 <%= @character.ideas %>
 </br>
-Bonds:
+<b>Bonds:</b>
 <%= @character.bonds %>
 </br>
-Flaws:
+<b>Flaws:</b>
 <%= @character.flaws %>
 </br>
-Featured Traits:
+<b>Features & Traits:</b>
 <%= @character.feat_traits %>
 </br>
-Information About Your Characters Race:
+<b>Information About Your Characters Race:</b>
 <%= @character.race_info%>
 </br>
-Class Information:
+<b>Class Information:</b>
 <%= @character.class_info%>
 </br>
-Background Story:
+<b>Background Story:</b>
 <%= @character.bg_story %>
 </br>
-Leveling:
+<b>Leveling:</b>
 <%= @character.lvl_gain %>
 </br>
 
-<%= link_to "See all your characters!", characterss_path%>
+<%= link_to "See all your characters!", characters_path%>
 <%= link_to "Need to Edit your Story?", edit_character_path%>
 <%= link_to("Delete this Character?", @character, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>
