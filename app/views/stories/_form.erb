@@ -1,0 +1,32 @@
+<%=form_for(@story) do |f|%>
+
+<%= f.label :Title%>
+<%= f.text_field :title%>
+</br>
+<%= f.label :Setting%>
+<%= f.text_field :setting%>
+</br>
+<%= f.label :Campaign_Type%>
+<%= f.text_field :camp_type%>
+</br>
+<%= f.label :Final_Boss%>
+<%= f.text_field :final_boss%>
+</br>
+<%= f.label :Reward_Items%>
+<%= f.text_field :item_reward%>
+</br>
+<%= f.label :Coin_Reward%>
+<%= f.text_field :coin_reward%>
+</br>
+<%= f.label :Summary%>
+<%= f.text_area :summary%>
+</br>
+<%= f.label :Difficulty%>
+<%= f.text_field :difficulty%>
+</br>
+<%= f.label :Link_to_The_Story%>
+<%= f.text_field :story_link%>
+</br>
+ <%= f.submit "Create Your Story!" %>
+ <%end%>
+

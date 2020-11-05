@@ -3,7 +3,7 @@
 <p>
 <% @stories.each do |story| %>
     <li>
-    <%= link_to story.name, stories %>
+    <%= link_to story.title, story %>
     </li>
     <br>
 <%end%>
@@ -11,4 +11,4 @@
 
 <%= link_to 'Create a new story!', new_story_path%>
 <br><br>
-<p> Don't smile too much... they will know you are up to something! </p>
+
