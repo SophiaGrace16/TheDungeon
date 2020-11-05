@@ -22,19 +22,37 @@ class StoriesController < ApplicationController
     end
 
     def edit
+        #gets edit form
         if !@story
             redirect_to stories_path
         end
     end
 
     def show
-
+        #shows the information
+        if !@story
+            redirect_to stories_path
+        end
     end
 
     def update
+        #posts edit form
+        if @story
+            @story.update(story_params)
+                if @story.errors.any?
+                    render 'edit'
+                else
+                    redirect_to story_path(@story)
+                end
+        else
+            render 'edit'
+        end
     end
 
-    def delete
+    def destroy
+        #deletes the story
+        @story.destroy
+        redirect_to stories_path
     end
 
 private
