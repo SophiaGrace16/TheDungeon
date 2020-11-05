@@ -1,23 +1,24 @@
 <h1>This is the story you requested, don't torture the players too much!</h1>
-
 <h5><%=@story.title%></h5>
-
 <h3><%=@story.setting%></h3>
-
 <h3><%=@story.camp_type%></h3>
-
-<h4><%=@story.difficulty%></h4>
+Difficulty:
+<p><%=@story.difficulty%></p>
 </br>
 <a href=<%= @story.story_link %> target="_blank">Click here to see the full story!</a>
 </br>
+Final Boss:
 <p><%=@story.final_boss%></p>
 </br>
+Item Rewards:
 <p><%=@story.item_reward%></p>
 </br>
+Coin Reward:
 <p><%=@story.coin_reward%></p>
 </br>
+Summary:
 <p><%=@story.summary%></p>
-
+</br>
 <%= link_to "See all your stories!", stories_path%>
 <%= link_to "Need to Edit your Story?", edit_story_path%>
 <%= link_to("Delete this story?", @story, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>

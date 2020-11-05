@@ -1,3 +1,138 @@
+<h1>Take a Look! Here is your Character!</h1>
+
+Name:
+<%= @character.name %>
+</br>
+Class:
+<%= @character.class %>
+</br>
+Level:
+<%= @character.level %>
+</br>
+Background:
+<%= @character.background %>
+</br>
+Race:
+<%= @character.race %>
+</br>
+Alignment:
+<%= @character.alignment %>
+</br>
+Experience Points:
+<%= @character.exp %>
+</br>
+Strength:
+<%= @character.str %>
+</br>
+Constitution:
+<%= @character.con %>
+</br>
+Dexterity:
+<%= @character.dex %>
+</br>
+Intelligence:
+<%= @character.int %>
+</br>
+Wisdom:
+<%= @character.wis %>
+</br>
+Charisma:
+<%= @character.chari %>
+</br>
+Strength Modifier:
+<%= @character.str_mod%>
+</br>
+Dexterity Modifier:
+<%= @character.dex_mod%>
+</br>
+Constitution Modifier:
+<%= @character.con_mod %>
+</br>
+Intelligence Modifier:
+<%= @character.inte_mod %>
+</br>
+Wisdom Modifier:
+<%= @character.wis_mod %>
+</br>
+Charisma Modifer:
+<%= @character.chari_mod %>
+</br>
+Passive Wisdom: 
+<%= @character.passive_wis %>
+</br>
+Proficiencies:
+<%= @character.proficiencies %>
+</br>
+Language:
+<%= @character.lang %>
+</br>
+Armor_Class:
+<%= @character.armor_class %>
+</br>
+Initiative:
+<%= @character.initiative %>
+</br>
+Speed:
+<%= @character.speed %>
+</br>
+Maximum Hit Points:
+<%= @character.hit_pt_max%>
+</br>
+Hit Dice:
+<%= @character.hit_Dice %>e %>
+</br>
+Spell Name:
+<%= @character.spellname %>me %>
+</br>
+Spell Description:
+<%= @character.spell_desc %>
+</br>
+Armor Description:
+<%= @character.arm_desc %>
+</br>
+CP:
+<%= @character.cp %>
+</br>
+SP:
+<%= @character.sp %>
+</br>
+EP:
+<%= @character.ep %>
+</br>
+GP:
+<%= @character.gp %>
+</br>
+PP:
+<%= @character.pp %>
+</br>
+Personality Traits:
+<%= @character.personality_traits %>
+</br>
+Ideas:
+<%= @character.ideas %>
+</br>
+Bonds:
+<%= @character.bonds %>
+</br>
+Flaws:
+<%= @character.flaws %>
+</br>
+Featured Traits:
+<%= @character.feat_traits %>
+</br>
+Information About Your Characters Race:
+<%= @character.race_info%>
+</br>
+Class Information:
+<%= @character.class_info%>
+</br>
+Background Story:
+<%= @character.bg_story %>
+</br>
+Leveling:
+<%= @character.lvl_gain %>
+</br>
+
 <%= link_to "See all your characters!", characterss_path%>
 <%= link_to "Need to Edit your Story?", edit_character_path%>
 <%= link_to("Delete this Character?", @character, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>

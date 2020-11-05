@@ -66,5 +66,3 @@ private
     end
 
 end
-
-end

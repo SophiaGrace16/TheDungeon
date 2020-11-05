@@ -1,6 +1,6 @@
 <% if player_logged_in? %>
 <ul>
-    <h6>Hey there <%= current_player.username %></h6>
+    Hey there <%= current_player.username %>
     <%= link_to "Log out", player_logout_path, method: :delete %>
     <%= link_to "Home", "/"%>
 <% else %>
