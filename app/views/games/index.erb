@@ -3,11 +3,11 @@
 <p>
 <% @games.each do |game| %>
     <li>
-     <%= link_to game.name, game%>
+     <%= link_to game.camp_name, game%> Started on: <%= game.date_started%>
     </li>
     <br>
 <%end%>
 </p>
 
-<%= link_to 'Create a New Game!', new_game_path%>
-<br><br>
+<%= link_to 'Create a New Game!', new_dm_game_path(@dm)%>
+</br>

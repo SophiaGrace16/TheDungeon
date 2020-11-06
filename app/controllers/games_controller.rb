@@ -1,13 +1,10 @@
 class GamesController < ApplicationController
     before_action :set_game, only: [:show, :edit, :update, :destroy]
-    # before_action :redirect_if_dm_not_logged_in
+    before_action :set_dm, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_if_dm_not_logged_in
 
     def index
-        if current_dm
-            @games = current_dm.games.all
-        elsif current_player
-            @games = current_player.games.all
-        end
+            @games = Game.all
     end
 
     def new 
@@ -17,35 +14,26 @@ class GamesController < ApplicationController
 
     def create
         #posts new form
-        if current_dm
-            @game = current_dm.games.build(game_params) #sets this to the current dm
-            binding.pry@
-            if @game.save
-                redirect_to game_path(@game)
-            else
-                render 'new'
-            end
-        elsif current_player
-            @game = current_player.games.build(game_params) #sets this to the current dm
-            if @game.save
-                redirect_to game_path(@game)
-            else
-                render 'new'
-            end
+        @game = current_dm.games.build(game_params) #sets this to the current dm
+        # binding.pry
+        if @game.save
+            redirect_to dm_game_path(@dm,@game)
+        else
+            render 'new_dm_game'
         end
     end
 
     def edit
         #gets edit form
         if !@game
-            redirect_to games_path
+            redirect_to dm_games_path
         end
     end
 
     def show
         #shows the information
         if !@game
-            redirect_to games_path
+            redirect_to dm_games_path
         end
     end
 
@@ -56,7 +44,7 @@ class GamesController < ApplicationController
                 if @game.errors.any?
                     render 'edit'
                 else
-                    redirect_to game_path(@game)
+                    redirect_to dm_game_path(@dm,@game)
                 end
         else
             render 'edit'
@@ -66,16 +54,20 @@ class GamesController < ApplicationController
     def destroy
         #deletes the game
         @game.destroy
-        redirect_to games_path
+        redirect_to dm_games_path
     end
 
 private
+
+    def set_dm
+        @dm = Dm.find_by_id(params[:dm_id])
+    end
 
     def set_game
         @game = Game.find_by_id(params[:id])
     end
 
     def game_params
-        params.require(:game).permit(:active, :camp_name, :loot_found, :exp_gained, :date_started, :game_notes, :coin_reward)
+        params.require(:game).permit(:active, :camp_name, :loot_found, :coin_reward, :exp_gained, :game_notes, :date_started, :sessions_played)
     end
 end

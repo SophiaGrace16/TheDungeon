@@ -3,5 +3,5 @@ class Game < ApplicationRecord
     has_many :players, through: :playergames
     belongs_to :dm
     
-    validates :active, :camp_name, :loot_found, :coin_reward, :exp_reward, :game_notes, :sessions_played, presence: true
+    validates :active, :camp_name, :loot_found, :coin_reward, :exp_gained, :game_notes, :date_started, :sessions_played, presence: true
 end

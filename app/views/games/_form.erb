@@ -6,14 +6,17 @@
 <%= f.label :Campaign_Name%>
 <%= f.text_field :camp_name%>
 </br>
+<%= f.label :Date_Game_Started%>
+<%= f.date_field :date_started%>
+</br>
+<%= f.label :Sessions_Played%>
+<%= f.number_field :sessions_played%>
+</br>
 <%= f.label :Loot_Found%>
 <%= f.text_area :loot_found%>
 </br>
 <%= f.label :Experience_Points_Gained%>
 <%= f.number_field :exp_gained,in: 0...10000%>
-</br>
-<%= f.label :Date_Game_Started%>
-<%= f.date_field :date_started%>
 </br>
 <%= f.label :Coin_Reward%>
 <%= f.number_field :coin_reward,in: 0...10000%>
@@ -22,4 +25,5 @@
 <%= f.text_area :game_notes%>
 </br>
  <%= f.submit "Submit Your Game!" %>
+ <%= link_to "Cancel", dm_games_path(@dm)%>
  <%end%>
