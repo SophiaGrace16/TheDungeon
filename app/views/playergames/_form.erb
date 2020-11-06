@@ -1,0 +1,29 @@
+<%=form_for(@game) do |f|%>
+
+<%= f.label :Dungon_Master%>
+<%= f.text_area :dm_host_name%>
+</br>
+<%= f.label :Campaign_Name%>
+<%= f.text_field :camp_name%>
+</br>
+<%= f.label :Character%>
+<%= f.text_field :character%>
+</br>
+<%= f.label :Date_You_joined%>
+<%= f.date_field :date_joined%>
+</br>
+<%= f.label :Loot_Found%>
+<%= f.text_area :loot_found%>
+</br>
+<%= f.label :Experience_Points_Gained%>
+<%= f.number_field :exp_gained,in: 0...10000%>
+</br>
+<%= f.label :Coin_Reward%>
+<%= f.number_field :coin_reward,in: 0...10000%>
+</br>
+<%= f.label :Game_Notes%>
+<%= f.text_area :game_notes%>
+</br>
+ <%= f.submit "Submit Your Game!" %>
+ <%= link_to "Cancel", dm_games_path(@dm)%>
+ <%end%>

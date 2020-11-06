@@ -1,0 +1,13 @@
+<h1>Your Collection of playergames:</h1>
+
+<p>
+<% @playergames.each do |playergame| %>
+    <li>
+     <%= link_to playergame.camp_name, playergame%> Started on: <%= playergame.date_started%>
+    </li>
+    <br>
+<%end%>
+</p>
+
+<%= link_to 'Find a New Game!', new_player_playergame_path(@player)%>
+</br>
