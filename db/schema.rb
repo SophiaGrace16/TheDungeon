@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_230611) do
+ActiveRecord::Schema.define(version: 2020_11_06_152614) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_11_05_230611) do
     t.text "game_notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "coin_reward"
     t.index ["dm_id"], name: "index_games_on_dm_id"
     t.index ["player_id"], name: "index_games_on_player_id"
   end

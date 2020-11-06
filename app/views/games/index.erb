@@ -1,0 +1,13 @@
+<h1>Your Collection of Games:</h1>
+
+<p>
+<% @games.each do |game| %>
+    <li>
+     <%= link_to game.name, game%>
+    </li>
+    <br>
+<%end%>
+</p>
+
+<%= link_to 'Create a New Game!', new_game_path%>
+<br><br>

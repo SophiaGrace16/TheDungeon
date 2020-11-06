@@ -2,12 +2,11 @@
 <ul>
     Hey there <%= current_player.username %>
     <%= link_to "Log out", player_logout_path, method: :delete %>
-    <%= link_to "Home", "/"%>
-<% else %>
-    <%= link_to "Need to Signup?", player_signup_path%>
-    <%= link_to "Home", "/"%>  
     <%= link_to "Characters",characters_path%>
     <%= link_to "Games",games_path%>
+<% else %>
+    <%= link_to "Need to Signup?", player_signup_path%>
+
 </ul>
 <% end %>
 

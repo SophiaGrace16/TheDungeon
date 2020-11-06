@@ -16,7 +16,10 @@
 <%= f.text_field :item_reward%>
 </br>
 <%= f.label :Coin_Reward%>
-<%= f.text_field :coin_reward%>
+<%= f.number_field :coin_reward,in: 0...10000%>
+</br>
+<%= f.label :Experience_Reward%>
+<%= f.number_field :exp_reward,in: 0...10000%>
 </br>
 <%= f.label :Summary%>
 <%= f.text_area :summary%>
