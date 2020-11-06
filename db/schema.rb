@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_171946) do
+ActiveRecord::Schema.define(version: 2020_11_06_173916) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_171946) do
     t.text "game_notes"
     t.integer "dm_id"
     t.integer "sessions_played"
+    t.date "date_started"
     t.index ["dm_id"], name: "index_games_on_dm_id"
   end
 
