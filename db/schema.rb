@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_152614) do
+ActiveRecord::Schema.define(version: 2020_11_06_165041) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -74,18 +74,26 @@ ActiveRecord::Schema.define(version: 2020_11_06_152614) do
 
   create_table "games", force: :cascade do |t|
     t.boolean "active"
-    t.integer "dm_id"
-    t.integer "player_id"
     t.string "camp_name"
     t.text "loot_found"
     t.integer "exp_gained"
-    t.date "date_started"
-    t.text "game_notes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "coin_reward"
+    t.text "game_notes"
+    t.integer "dm_id"
     t.index ["dm_id"], name: "index_games_on_dm_id"
-    t.index ["player_id"], name: "index_games_on_player_id"
+  end
+
+  create_table "player_games", force: :cascade do |t|
+    t.string "camp_name"
+    t.text "loot_found"
+    t.integer "exp_gained"
+    t.integer "coin_reward"
+    t.date "date_joined"
+    t.text "game_notes"
+    t.integer "game_id"
+    t.integer "player_id"
+    t.index ["game_id"], name: "index_player_games_on_game_id"
+    t.index ["player_id"], name: "index_player_games_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|
