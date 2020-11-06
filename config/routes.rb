@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   delete '/player/logout' => 'sessions#playerdestroy'
   delete '/dm/logout' => 'sessions#dmdestroy'
 
-  resources :characters, :stories, :games, :players, :dms
+  resources :characters, :stories, :games, :players, :dms, :playergames
 end

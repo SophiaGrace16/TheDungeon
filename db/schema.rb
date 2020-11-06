@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_165041) do
+ActiveRecord::Schema.define(version: 2020_11_06_171946) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -80,10 +80,11 @@ ActiveRecord::Schema.define(version: 2020_11_06_165041) do
     t.integer "coin_reward"
     t.text "game_notes"
     t.integer "dm_id"
+    t.integer "sessions_played"
     t.index ["dm_id"], name: "index_games_on_dm_id"
   end
 
-  create_table "player_games", force: :cascade do |t|
+  create_table "playergames", force: :cascade do |t|
     t.string "camp_name"
     t.text "loot_found"
     t.integer "exp_gained"
@@ -92,8 +93,9 @@ ActiveRecord::Schema.define(version: 2020_11_06_165041) do
     t.text "game_notes"
     t.integer "game_id"
     t.integer "player_id"
-    t.index ["game_id"], name: "index_player_games_on_game_id"
-    t.index ["player_id"], name: "index_player_games_on_player_id"
+    t.string "dm_host_name"
+    t.index ["game_id"], name: "index_playergames_on_game_id"
+    t.index ["player_id"], name: "index_playergames_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|
