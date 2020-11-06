@@ -37,8 +37,8 @@ class GamesController < ApplicationController
         end
     end
 
-    def update
-        #posts edit form
+ 
+    #posts edit form
         if @game
             @game.update(game_params)
                 if @game.errors.any?
