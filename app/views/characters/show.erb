@@ -133,6 +133,5 @@
 <%= @character.lvl_gain %>
 </br>
 
-<%= link_to "See all your characters!", characters_path%>
-<%= link_to "Need to Edit your Story?", edit_character_path%>
+<%= link_to "Need to Edit your Character?", edit_character_path%>
 <%= link_to("Delete this Character?", @character, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>

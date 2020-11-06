@@ -19,6 +19,6 @@ Coin Reward:
 Summary:
 <p><%=@story.summary%></p>
 </br>
-<%= link_to "See all your stories!", stories_path%>
+
 <%= link_to "Need to Edit your Story?", edit_story_path%>
 <%= link_to("Delete this story?", @story, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>
