@@ -29,15 +29,27 @@ class SessionsController < ApplicationController
         else
           redirect_to dm_login_path
         end
-      end
-    
-      def playerdestroy
-        session.clear
-        redirect_to '/'
-      end
+    end
 
-      def dmdestroy
-        session.clear
-        redirect_to '/'
+    def googleomniauth
+      @player = Player.create_by_google_omniauth(auth)
+      session[:player_id] = @player.id
+      redirect_to characters_path
+    end
+    
+    def playerdestroy
+      session.clear
+      redirect_to '/'
+    end
+
+    def dmdestroy
+      session.clear
+      redirect_to '/'
+    end
+    
+    private
+
+      def auth
+        request.env['omniauth.auth']
       end
 end
