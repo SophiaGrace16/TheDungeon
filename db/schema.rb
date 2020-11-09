@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_194830) do
+ActiveRecord::Schema.define(version: 2020_11_09_165450) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_194830) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.boolean "active"
+    t.boolean "game_active"
     t.string "camp_name"
     t.text "loot_found"
     t.integer "exp_gained"

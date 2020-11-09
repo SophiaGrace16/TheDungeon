@@ -1,9 +1,9 @@
 <h1>Here is your game!</h1>
 
 <b>Is this game active?:</b>
-<%if @game.active == true %>
+<%if @game.game_active == true %>
 <%="Yes this game is being played!"%>
-<%elsif @game.active =! true%>
+<%elsif @game.game_active =! true%>
 <%="No we finished that game!"%>
 <%end%>
 </br>
