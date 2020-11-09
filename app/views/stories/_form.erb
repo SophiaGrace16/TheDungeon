@@ -9,34 +9,34 @@
 
 <%=form_for(@story) do |f|%>
 
-<%= f.label :Title%>
+<%= f.label :title, "Title:"%>
 <%= f.text_field :title%>
 </br>
-<%= f.label :Setting%>
+<%= f.label :setting, "Setting:"%>
 <%= f.text_field :setting%>
 </br>
-<%= f.label :Campaign_Type%>
+<%= f.label :camp_type, "Campaign Type:"%>
 <%= f.text_field :camp_type%>
 </br>
-<%= f.label :Final_Boss%>
+<%= f.label :final_boss, "Final Boss:"%>
 <%= f.text_field :final_boss%>
 </br>
-<%= f.label :Item_Rewards%>
+<%= f.label :item_rewards, "Item Rewards:"%>
 <%= f.text_field :item_reward%>
 </br>
-<%= f.label :Coin_Reward%>
+<%= f.label :coin_reward, "Coin Reward:"%>
 <%= f.number_field :coin_reward,in: 0...10000%>
 </br>
-<%= f.label :Experience_Reward%>
+<%= f.label :exp_reward, "Experience Reward:"%>
 <%= f.number_field :exp_reward,in: 0...10000%>
 </br>
-<%= f.label :Summary%>
+<%= f.label :summary, "Summary:"%>
 <%= f.text_area :summary%>
 </br>
-<%= f.label :Difficulty%>
+<%= f.label :difficulty, "Difficulty:"%>
 <%= f.text_field :difficulty%>
 </br>
-<%= f.label :Link_to_The_Story%>
+<%= f.label :story_link, "Link to the Story:"%>
 <%= f.text_field :story_link%>
 </br>
  <%= f.submit "Submit Your Story!" %>

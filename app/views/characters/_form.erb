@@ -9,136 +9,136 @@
 
 <%=form_for(@character) do |f|%>
 
-    <%= f.label :Name %>
+    <%= f.label :name, "Name:" %>
     <%= f.text_field :name %>
     </br>
-    <%= f.label :Class %>
+    <%= f.label :character_class, "Character's Class:" %>
     <%= f.text_field :character_class %>
     </br>
-    <%= f.label :Level %>
+    <%= f.label :level, "Level:" %>
     <%= f.number_field :level, in: 1...1000%>
     </br>
-    <%= f.label :Background %>
+    <%= f.label :background, "Background" %>
     <%= f.text_field :background %>
     </br>
-    <%= f.label :Race %>
+    <%= f.label :race, "Race" %>
     <%= f.text_field :race %>
     </br>
-    <%= f.label :Alignment %>
+    <%= f.label :alignment, "Alignment:" %>
     <%= f.text_field :alignment %>
     </br>
-    <%= f.label :Experience_Points %>
+    <%= f.label :exp, "Experience Points:" %>
     <%= f.number_field :exp, in: -100...200%>
     </br>
-    <%= f.label :Strength %>
+    <%= f.label :str, "Strength:" %>
     <%= f.number_field :str, in: -100...200%>
     </br>
-    <%= f.label :Constitution %>
+    <%= f.label :con, "Constitution:" %>
     <%= f.number_field :con, in: -100...200%>
     </br>
-    <%= f.label :Dexterity %>
+    <%= f.label :dex, "Dexterity:" %>
     <%= f.number_field :dex, in: -100...200%>
     </br>
-    <%= f.label :Intelligence %>
+    <%= f.label :inte, "Intelligence:" %>
     <%= f.number_field :inte, in: -100...200%>
     </br>
-    <%= f.label :Wisdom %>
+    <%= f.label :wis, "Wisdom:" %>
     <%= f.number_field :wis, in: -100...200%>
     </br>
-    <%= f.label :Charisma %>
+    <%= f.label :chari, "Charisma:" %>
     <%= f.number_field :chari, in: -100...200%>
     </br>
-    <%= f.label :Strength_Modifier %>
+    <%= f.label :str_mod, "Strength Modifier:" %>
     <%= f.number_field :str_mod, in: -100...100%>
     </br>
-    <%= f.label :Dexterity_Modifier%>
+    <%= f.label :dex_mod, "Dexterity_Modifier:"%>
     <%= f.number_field :dex_mod, in: -100...100 %>
     </br>
-    <%= f.label :Constitution_Modifier %>
+    <%= f.label :con_mod, "Constitution Modifier:" %>
     <%= f.number_field :con_mod, in: -100...100 %>
     </br>
-    <%= f.label :Intelligence_Modifier %>
+    <%= f.label :inte_mod, "Intelligence Modifier:" %>
     <%= f.number_field :inte_mod, in: -100...100 %>
     </br>
-    <%= f.label :Wisdom_Modifier %>
+    <%= f.label :wis_mod, "Wisdom Modifier:" %>
     <%= f.number_field :wis_mod, in: -100...100 %>
     </br>
-    <%= f.label :Charisma_Modifer %>
+    <%= f.label :chari_mod, "Charisma Modifer:" %>
     <%= f.number_field :chari_mod, in: -100...100 %>
     </br>
-    <%= f.label :Passive_Wisdom %>
+    <%= f.label :passive_wis, "Passive Wisdom:" %>
     <%= f.number_field :passive_wis, in: -100...200%>
     </br>
-    <%= f.label :Proficiencies %>
+    <%= f.label :proficiencies, "Proficiencies:" %>
     <%= f.text_area :proficiencies %>
     </br>
-    <%= f.label :Language %>
+    <%= f.label :lang, "Language:" %>
     <%= f.text_area :lang %>
     </br>
-    <%= f.label :Armor_Class %>
+    <%= f.label :armor_class, "Armor Class:" %>
     <%= f.number_field :armor_class, in: -100...200%>
     </br>
-    <%= f.label :Initiative %>
+    <%= f.label :initative, "Initiative:" %>
     <%= f.number_field :initiative, in: -100...200%>
     </br>
-    <%= f.label :Speed %>
+    <%= f.label :speed, "Speed:" %>
     <%= f.number_field :speed, in: -100...200%>
     </br>
-    <%= f.label :Maximum_Hit_Points %>
+    <%= f.label :hit_pt_max, "Maximum Hit Points:" %>
     <%= f.number_field :hit_pt_max, in: -100...200%>
     </br>
-    <%= f.label :Hit_Dice %>
+    <%= f.label :hit_dice, "hit_dice" %>
     <%= f.text_field :hit_dice %>
     </br>
-    <%= f.label :Spell_Name %>
+    <%= f.label :spellname, "Does your character have a spell? If not just enter 'none'"%>
     <%= f.text_field :spellname %>
     </br>
-    <%= f.label :Spell_Description %>
+    <%= f.label :spell_desc, "Spell Description: (if you don't have any say 'n/a')" %>
     <%= f.text_area :spell_desc %>
     </br>
-    <%= f.label :Armor_Description %>
+    <%= f.label :arm_desc, "Armor Description:" %>
     <%= f.text_area :arm_desc %>
     </br>
-    <%= f.label :CP %>
+    <%= f.label :cp, "CP:" %>
     <%= f.number_field :cp, in: -100...200%>
     </br>
-    <%= f.label :SP %>
+    <%= f.label :sp, "SP:" %>
     <%= f.number_field :sp, in: -100...200%>
     </br>
-    <%= f.label :EP %>
+    <%= f.label :ep, "EP:" %>
     <%= f.number_field :ep, in: -100...200%>
     </br>
-    <%= f.label :GP %>
+    <%= f.label :gp, "GP:"%>
     <%= f.number_field :gp, in: -100...200%>
     </br>
-    <%= f.label :PP %>
+    <%= f.label :pp, "PP:" %>
     <%= f.number_field :pp, in: -100...200%>
     </br>
-    <%= f.label :Personality_Traits %>
+    <%= f.label :personality_traits, "Personality Traits:" %>
     <%= f.text_area :personality_traits %>
     </br>
-    <%= f.label :Ideals %>
+    <%= f.label :ideas, "Ideals:" %>
     <%= f.text_area :ideas %>
     </br>
-    <%= f.label :Bonds %>
+    <%= f.label :bonds, "Bonds:" %>
     <%= f.text_area :bonds %>
     </br>
-    <%= f.label :Flaws %>
+    <%= f.label :flaws, "Flaws:" %>
     <%= f.text_area :flaws %>
     </br>
-    <%= f.label :Featured_Traits %>
+    <%= f.label :feat_traits, "Featured Traits:" %>
     <%= f.text_area :feat_traits %>
     </br>
-    <%= f.label :Information_About_Your_Characters_Race%>
+    <%= f.label :race_info, "Information About Your Characters Race:"%>
     <%= f.text_area :race_info %>
     </br>
-    <%= f.label :Class_Information%>
+    <%= f.label :class_info, "Class Information"%>
     <%= f.text_area :class_info %>
     </br>
-    <%= f.label :Background_Story %>
+    <%= f.label :bg_story, "Background Story:" %>
     <%= f.text_area :bg_story %>
     </br>
-    <%= f.label :Leveling %>
+    <%= f.label :lvl_gain, "Leveling:" %>
     <%= f.text_area :lvl_gain %>
     </br>
     <%= f.submit "Submit Your Character!" %>

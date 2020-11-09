@@ -71,6 +71,6 @@ private
     end
 
     def playergame_params
-        params.require(:playergame).permit(:camp_name, :loot_found, :character, :date_joined, :coin_reward, :exp_gained, :game_notes, :player_host_name)
+        params.require(:playergame).permit(:camp_name, :loot_found, :character, :date_joined, :coin_reward, :exp_gained, :game_notes, :player_host_name, :dm_id, :game_id)
     end
 end

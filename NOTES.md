@@ -62,14 +62,3 @@ Throughout: Keep in mind partials and helpers -- for use in views
     - CSS, HTML, bootstrap, materialize, JS
 
 
- <%= f.label :dm_host_name, "Who is the DM?"%>
-<%= f.collection_select :dm_ids, Dm.all, :id, :username %>
-</br>
-<%= f.label :camp_name, "What is the Campaign Name?"%>
-<%= f.collection_select :game_ids, Game.all, :id, :camp_title %>
-</br>
-<%= f.label :character, "Which character are you using?"%>
-<%= f.collection_select :character_ids, current_player.character.all, :id, :name %>
-</br>
-<%= f.label :date_joined, "What day did you join the campaign?"%>
-<%= f.date_field :date_joined%>
