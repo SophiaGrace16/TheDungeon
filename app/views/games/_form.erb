@@ -1,6 +1,6 @@
 <div class="errors">
 <% if @game.errors.any? %>
-    <h3>The game wasnt saved because:</h3>
+    <h3>The game wasn't saved because:</h3>
     <ul>
     <li> <%= @game.errors.full_messages.to_sentence %> </li>
     </ul>
@@ -21,16 +21,16 @@
 <%= f.label :sessions_played, "How many sessions have you played?"%>
 <%= f.number_field :sessions_played%>
 </br>
-<%= f.label :Loot_Found%>
+<%= f.label :loot_found, "What loot was found?"%>
 <%= f.text_area :loot_found%>
 </br>
-<%= f.label :Experience_Points_Gained%>
+<%= f.label :exp_gained, "Experience points gained?"%>
 <%= f.number_field :exp_gained,in: 0...10000%>
 </br>
-<%= f.label :Coin_Reward%>
+<%= f.label :coin_reward, "Coin Reward?"%>
 <%= f.number_field :coin_reward,in: 0...10000%>
 </br>
-<%= f.label :Game_Notes%>
+<%= f.label :game_notes, "Any notes?"%>
 <%= f.text_area :game_notes%>
 </br>
  <%= f.submit "Submit Your Game!" %>

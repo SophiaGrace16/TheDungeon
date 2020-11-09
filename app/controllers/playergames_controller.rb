@@ -10,7 +10,9 @@ class PlayergamesController < ApplicationController
     def new 
         # gets new form
         @playergame = Playergame.new
-        @dm=Dm.all
+        @dm = Dm.all
+        @game = Game.all
+        @character = current_player.characters.all
     end
 
     def create

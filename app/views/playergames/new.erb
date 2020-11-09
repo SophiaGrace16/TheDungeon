@@ -1,8 +1,2 @@
-somehow need to make a drop down where 
-they select the dm host & the game?
-Then maybe the character?
-
-<%= form_for @dm do |f| %>
-  <%= collection_select :dm_id, Dm.all, :id, :username %>
-  <%= f.submit %>
-<% end %>
+<h1>Create your New Game</h1>
+<%= render 'form' %>

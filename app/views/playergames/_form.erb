@@ -9,14 +9,14 @@
 
 <%=form_for(@playergame) do |f|%>
 
-<%= f.label :Dungon_Master%>
-<%= f.text_area :dm_host_name%>
+<%= f.label :dm_host_name, "Who is the DM?"%>
+<%= f.collection_select :dm_ids, Dm.all, :id, :username %>
 </br>
-<%= f.label :Campaign_Name%>
-<%= f.text_field :camp_name%>
+<%= f.label :camp_name, "What is the Campaign Name?"%>
+<%= f.collection_select :game_ids, Game.all, :id, :camp_title %>
 </br>
-<%= f.label :Character%>
-<%= f.text_field :character%>
+<%= f.label :character, "Which character are you using?"%>
+<%= f.collection_select :character_ids, current_player.character.all, :id, :name %>
 </br>
 <%= f.label :Date_You_joined%>
 <%= f.date_field :date_joined%>
