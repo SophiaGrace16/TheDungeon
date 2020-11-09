@@ -9,16 +9,16 @@
 
 <%=form_for(@game) do |f|%>
 
-<%= f.label :Is_this_game_active?%>
-<%= f.check_box :active, :checked => true%>
+<%= f.label :game_active, "Is this game active?"%>
+<%= f.check_box :game_active %>
 </br>
-<%= f.label :Campaign_Name%>
+<%= f.label :camp_name, "Campaign Name:"%>
 <%= f.text_field :camp_name%>
 </br>
-<%= f.label :Date_Game_Started%>
+<%= f.label :date_started, "Date Game Started?"%>
 <%= f.date_field :date_started%>
 </br>
-<%= f.label :Sessions_Played%>
+<%= f.label :sessions_played, "How many sessions have you played?"%>
 <%= f.number_field :sessions_played%>
 </br>
 <%= f.label :Loot_Found%>

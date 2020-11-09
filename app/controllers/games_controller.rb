@@ -19,7 +19,7 @@ class GamesController < ApplicationController
         if @game.save
             redirect_to dm_game_path(@dm,@game)
         else
-            render 'new_dm_game'
+            redirect_to new_dm_game_path(@dm)
         end
     end
 
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
     end
 
     def active_games
-        @games = current_dm.games.active
+        @games = current_dm.games.game_active
     end
 
     def destroy
