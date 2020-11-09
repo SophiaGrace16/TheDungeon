@@ -8,7 +8,7 @@ Specs:
 - [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)  --NAMESPACE LESSONS
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)  --NAMESPACE LESSONS
 - [x] Include signup
 - [x] Include login
 - [x] Include logout
@@ -18,8 +18,8 @@ Specs:
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
+- [x] The application is pretty DRY
+- [?] Limited logic in controllers
 - [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
 
@@ -62,34 +62,14 @@ Throughout: Keep in mind partials and helpers -- for use in views
     - CSS, HTML, bootstrap, materialize, JS
 
 
-  create_table "DMgames", force: :cascade do |t|
-    t.boolean "active"
-    t.integer "dm_id"
-    t.string "camp_name"
-    t.text "loot_found"
-    t.integer "exp_gained"
-    t.date "date_started"
-    t.text "game_notes"
-    t.integer "coin_reward"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["dm_id"], name: "index_games_on_dm_id"
-  end
-
-  create_table "Playergames", force: :cascade do |t|
-    t.integer "game_id"
-    t.integer "player_id"
-    t.string "camp_name"
-    t.text "loot_found"
-    t.integer "exp_gained"
-    t.date "date_started"
-    t.text "game_notes"
-    t.integer "coin_reward"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_games_on_dm_id"
-     t.index ["player_id"], name: "index_games_on_dm_id"
-  end
-
-
- 
+ <%= f.label :dm_host_name, "Who is the DM?"%>
+<%= f.collection_select :dm_ids, Dm.all, :id, :username %>
+</br>
+<%= f.label :camp_name, "What is the Campaign Name?"%>
+<%= f.collection_select :game_ids, Game.all, :id, :camp_title %>
+</br>
+<%= f.label :character, "Which character are you using?"%>
+<%= f.collection_select :character_ids, current_player.character.all, :id, :name %>
+</br>
+<%= f.label :date_joined, "What day did you join the campaign?"%>
+<%= f.date_field :date_joined%>

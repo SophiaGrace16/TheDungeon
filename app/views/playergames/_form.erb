@@ -9,30 +9,19 @@
 
 <%=form_for(@playergame) do |f|%>
 
-<%= f.label :dm_host_name, "Who is the DM?"%>
-<%= f.collection_select :dm_ids, Dm.all, :id, :username %>
 </br>
-<%= f.label :camp_name, "What is the Campaign Name?"%>
-<%= f.collection_select :game_ids, Game.all, :id, :camp_title %>
-</br>
-<%= f.label :character, "Which character are you using?"%>
-<%= f.collection_select :character_ids, current_player.character.all, :id, :name %>
-</br>
-<%= f.label :Date_You_joined%>
-<%= f.date_field :date_joined%>
-</br>
-<%= f.label :Loot_Found%>
+<%= f.label :loot_found, "Have you found any loot?"%>
 <%= f.text_area :loot_found%>
 </br>
-<%= f.label :Experience_Points_Gained%>
+<%= f.label :exp_gained, "Have you gained any exp points?"%>
 <%= f.number_field :exp_gained,in: 0...10000%>
 </br>
-<%= f.label :Coin_Reward%>
+<%= f.label :coin_reward, "Have you made any money?"%>
 <%= f.number_field :coin_reward,in: 0...10000%>
 </br>
-<%= f.label :Game_Notes%>
+<%= f.label :game_notes, "Any notes about the game?"%>
 <%= f.text_area :game_notes%>
 </br>
- <%= f.submit "Submit Your Game!" %>
- <%= link_to "Cancel", player_playergames_path(@player)%>
- <%end%>
+<%= f.submit "Submit Your Game!" %>
+<%= link_to "Cancel", player_playergames_path(@player)%>
+<%end%>
