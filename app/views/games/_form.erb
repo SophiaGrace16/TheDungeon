@@ -10,7 +10,7 @@
 <%=form_for(@game) do |f|%>
 
 <%= f.label :game_active, "Is this game active?"%>
-<%= f.check_box :game_active %>
+<%= f.check_box :game_active, {checked: true, unchecked: false} %>
 </br>
 <%= f.label :camp_name, "Campaign Name:"%>
 <%= f.text_field :camp_name%>

@@ -3,7 +3,7 @@
 <b>Is this game active?:</b>
 <%if @game.game_active == true %>
 <%="Yes this game is being played!"%>
-<%elsif @game.game_active =! true%>
+<%elsif @game.game_active == false%>
 <%="No we finished that game!"%>
 <%end%>
 </br>
