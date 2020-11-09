@@ -1,5 +1,5 @@
 <div class="errors">
-<% if @stories.errors.any? %>
+<% if @story.errors.any? %>
     <h3>The story wasn't saved because:</h3>
     <ul>
     <li> <%= @story.errors.full_messages.to_sentence %> </li>

@@ -1,23 +1,32 @@
-<h1>This is the story you requested, don't torture the players too much!</h1>
-<h5><%=@story.title%></h5>
-<h3><%=@story.setting%></h3>
-<h3><%=@story.camp_type%></h3>
-Difficulty:
+<h3>This is the story you requested, don't torture the players too much!</h3>
+<h3><%=@story.title%></h3>
+<b>Setting:</b> 
+<p><%=@story.setting%></p>
+</br>
+<b>Campaign Type:</b>
+<p><%=@story.camp_type%></p>
+</br>
+<b>Difficulty:</b>
+<br/>
 <p><%=@story.difficulty%></p>
+</br>
+<b>Final Boss:</b>
+<p><%=@story.final_boss%></p>
+</br>
+<b>Item Rewards:</b>
+<p><%=@story.item_reward%></p>
+</br>
+<b>Coin Reward:</b>
+<p><%=@story.coin_reward%></p>
+</br>
+<b>Base Experience Points Reward:</b>
+<p><%=@story.exp_reward%></p>
+</br>
+<b>Summary:</b>
+<p><%=@story.summary%></p>
 </br>
 <a href=<%= @story.story_link %> target="_blank">Click here to see the full story!</a>
 </br>
-Final Boss:
-<p><%=@story.final_boss%></p>
-</br>
-Item Rewards:
-<p><%=@story.item_reward%></p>
-</br>
-Coin Reward:
-<p><%=@story.coin_reward%></p>
-</br>
-Summary:
-<p><%=@story.summary%></p>
 </br>
 
 <%= link_to "Need to Edit your Story?", edit_story_path%>
