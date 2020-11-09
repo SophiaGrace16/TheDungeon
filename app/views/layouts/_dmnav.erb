@@ -6,7 +6,7 @@
     Hey there <%= current_dm.username %>
     <%= link_to "Log out", dm_logout_path, method: :delete %>
     <%= link_to "Stories", stories_path%>
-    <%= link_to "Games", games_path%>
+    <%= link_to "Games", dm_games_path(current_dm)%>
 </ul>
 <% end %>
 
