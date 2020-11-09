@@ -1,4 +1,4 @@
-<h1>Your Collection of Games:</h1>
+<h1>Your Collection of Active Games:</h1>
 
 <p>
 <% @games.each do |game| %>
@@ -10,6 +10,4 @@
 </p>
 
 <%= link_to 'Create a New Game!', new_dm_game_path(@dm)%>
-</br>
-<%= link_to 'See Your Active Games', active_games_path(@dm)%>
 </br>

@@ -1,3 +1,12 @@
+<div class="errors">
+<% if @game.errors.any? %>
+    <h3>The game wasnt saved because:</h3>
+    <ul>
+    <li> <%= @game.errors.full_messages.to_sentence %> </li>
+    </ul>
+<% end %>
+</div>
+
 <%=form_for(@game) do |f|%>
 
 <%= f.label :Is_this_game_active?%>

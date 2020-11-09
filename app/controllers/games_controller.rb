@@ -1,10 +1,10 @@
 class GamesController < ApplicationController
     before_action :set_game, only: [:show, :edit, :update, :destroy]
-    before_action :set_dm, only: [:show, :edit, :update, :destroy]
+    before_action :set_dm
     before_action :redirect_if_dm_not_logged_in
 
     def index
-            @games = Game.all
+        @games = Game.all
     end
 
     def new 
@@ -26,18 +26,18 @@ class GamesController < ApplicationController
     def edit
         #gets edit form
         if !@game
-            redirect_to dm_games_path
+            redirect_to dm_games_path(@dm)
         end
     end
 
     def show
         #shows the information
         if !@game
-            redirect_to dm_games_path
+            redirect_to dm_games_path(@dm)
         end
     end
 
- 
+    def update
     #posts edit form
         if @game
             @game.update(game_params)
@@ -51,10 +51,14 @@ class GamesController < ApplicationController
         end
     end
 
+    def active_games
+        @games = current_dm.games.active
+    end
+
     def destroy
         #deletes the game
         @game.destroy
-        redirect_to dm_games_path
+        redirect_to dm_games_path(@dm)
     end
 
 private
