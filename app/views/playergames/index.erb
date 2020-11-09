@@ -1,9 +1,9 @@
-<h1>Your Collection of playergames:</h1>
+<h1>Your Collection of Games:</h1>
 
 <p>
-<% @playergames.each do |playergame| %>
+<% @playergames.each do |pg| %>
     <li>
-     <%= link_to playergame.camp_name, playergame%> Started on: <%= playergame.date_started%>
+     <%= link_to pg.camp_name, player_playergame_path(@player, pg)%> Joined on: <%= playergame.date_joinedd%>
     </li>
     <br>
 <%end%>

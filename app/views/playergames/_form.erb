@@ -1,4 +1,13 @@
-<%=form_for(@game) do |f|%>
+<div class="errors">
+<% if @playergame.errors.any? %>
+    <h3>The game wasn't saved because:</h3>
+    <ul>
+    <li> <%= @playergame.errors.full_messages.to_sentence %> </li>
+    </ul>
+<% end %>
+</div>
+
+<%=form_for(@playergame) do |f|%>
 
 <%= f.label :Dungon_Master%>
 <%= f.text_area :dm_host_name%>
@@ -25,5 +34,5 @@
 <%= f.text_area :game_notes%>
 </br>
  <%= f.submit "Submit Your Game!" %>
- <%= link_to "Cancel", dm_games_path(@dm)%>
+ <%= link_to "Cancel", player_playergames_path(@player)%>
  <%end%>
