@@ -1,3 +1,12 @@
+<div class="errors">
+<% if @stories.errors.any? %>
+    <h3>The story wasn't saved because:</h3>
+    <ul>
+    <li> <%= @story.errors.full_messages.to_sentence %> </li>
+    </ul>
+<% end %>
+</div>
+
 <%=form_for(@story) do |f|%>
 
 <%= f.label :Title%>

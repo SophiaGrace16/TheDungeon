@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get '/dm/signup' => 'dms#signup'
   delete '/player/logout' => 'sessions#playerdestroy'
   delete '/dm/logout' => 'sessions#dmdestroy'
+  get '/auth/google_oauth2/callback' => 'sessions#googleomniauth'
+  get '/dms/:dm_id/active_games'=> 'games#active_games', as: 'active_games'
 
-  resources :characters, :stories, :players, :dms, :playergames
+  resources :characters, :stories, :playergames
 
   resources :dms do
     resources :games
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :players do
-    :playergames
+    resources :playergames
   end
 
 
