@@ -33,5 +33,5 @@
 <%= f.text_area :game_notes%>
 </br>
 <%= f.submit "Submit Your Game!" %>
-<%= link_to "Cancel", player_playergames_path(@player)%>
+<%= link_to "Cancel", player_playergames_path(current_player)%>
 <%end%>

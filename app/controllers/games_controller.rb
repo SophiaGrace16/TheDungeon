@@ -15,21 +15,19 @@ class GamesController < ApplicationController
     def create
         #posts new form
         @game = current_dm.games.build(game_params) #sets this to the current dm
-        # binding.pry
         if @game.save
-            redirect_to dm_game_path(@dm,@game)
+            redirect_to dm_game_path(current_dm,@game)
         else
-            redirect_to new_dm_game_path(@dm)
+            redirect_to new_dm_game_path(current_dm)
         end
     end
 
     def edit
-        #gets edit form
         if @game.dm_id != current_dm.id
-            redirect_to dm_games_path(@dm)
+            redirect_to dm_games_path(current_dm)
         elsif @game.dm_id ==current_dm.id
             if !@game
-                redirect_to dm_games_path(@dm)
+                redirect_to dm_games_path(current_dm)
             end
         end
     end
@@ -37,7 +35,7 @@ class GamesController < ApplicationController
     def show
         #shows the information
         if !@game
-            redirect_to dm_games_path(@dm)
+            redirect_to dm_games_path(current_dm)
         end
     end
 
@@ -48,7 +46,7 @@ class GamesController < ApplicationController
                 if @game.errors.any?
                     render 'edit'
                 else
-                    redirect_to dm_game_path(@dm,@game)
+                    redirect_to dm_game_path(current_dm,@game)
                 end
         else
             render 'edit'
@@ -62,14 +60,10 @@ class GamesController < ApplicationController
     def destroy
         #deletes the game
         @game.destroy
-        redirect_to dm_games_path(@dm)
+        redirect_to dm_games_path(current_dm)
     end
 
 private
-
-    def set_dm
-        @dm = Dm.find_by_id(params[:dm_id])
-    end
 
     def set_game
         @game = Game.find_by_id(params[:id])

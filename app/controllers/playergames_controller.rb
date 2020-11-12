@@ -20,19 +20,19 @@ class PlayergamesController < ApplicationController
         @playergame = current_player.playergames.build(playergame_params) #sets this to the current player
         binding.pry
         if @playergame.save
-            redirect_to player_playergame_path(@player,@playergame)
+            redirect_to player_playergame_path(current_player,@playergame)
         else
-            redirect_to new_player_playergame_path(@player)
+            redirect_to new_player_playergame_path(current_player)
         end
     end
 
     def edit
         #gets edit form
         if @playergame.player_id != current_player.id
-            redirect_to player_playergames_path(@player)
+            redirect_to player_playergames_path(current_player)
         elsif @playergame.player_id == current_player.id
             if !@playergame
-                redirect_to player_playergames_path(@player)
+                redirect_to player_playergames_path(current_player)
             end
         end
     end
@@ -40,7 +40,7 @@ class PlayergamesController < ApplicationController
     def show
         #shows the information
         if !@playergame
-            redirect_to player_playergames_path(@player)
+            redirect_to player_playergames_path(current_player)
         end
     end
 
@@ -51,7 +51,7 @@ class PlayergamesController < ApplicationController
                 if @playergame.errors.any?
                     render 'edit'
                 else
-                    redirect_to player_playergame_path(@player,@playergame)
+                    redirect_to player_playergame_path(current_player,@playergame)
                 end
         else
             render 'edit'
@@ -61,14 +61,10 @@ class PlayergamesController < ApplicationController
     def destroy
         #deletes the game
         @playergame.destroy
-        redirect_to player_playergames_path(@player)
+        redirect_to player_playergames_path(current_player)
     end
 
 private
-
-    def set_player
-        @player = Player.find_by_id(params[:player_id])
-    end
 
     def set_playergame
         @playergame = Playergame.find_by_id(params[:id])

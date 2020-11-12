@@ -28,5 +28,5 @@
 <b>Game Notes:</b>
 <%=@game.game_notes%>
 </br>
-<%= link_to "Need to Edit your Game?", edit_dm_game_path(@dm)%>
+<%= link_to "Need to Edit your Game?", edit_dm_game_path(current_dm)%>
 <%= link_to("Delete this Game?", @game, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>

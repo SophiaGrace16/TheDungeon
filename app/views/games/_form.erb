@@ -7,7 +7,7 @@
 <% end %>
 </div>
 
-<%=form_for(@game) do |f|%>
+<%= form_with model: @game, local: true do |f|%>
 
 <%= f.label :game_active, "Is this game active?"%>
 <%= f.check_box :game_active, {checked: true, unchecked: false} %>
@@ -34,5 +34,5 @@
 <%= f.text_area :game_notes%>
 </br>
  <%= f.submit "Submit Your Game!" %>
- <%= link_to "Cancel", dm_games_path(@dm)%>
  <%end%>
+ <%= link_to "Cancel", dm_games_path(current_dm)%>

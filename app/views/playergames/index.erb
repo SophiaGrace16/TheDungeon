@@ -5,11 +5,11 @@
     <li>
         <%camp = Game.find_by_id(pg.game_id)%>
         <%camp_name = camp.camp_name%>
-        <%= link_to camp_name, player_playergame_path(@player, pg)%> Joined on: <%= pg.date_joined%>
+        <%= link_to camp_name, player_playergame_path(current_player, pg)%> Joined on: <%= pg.date_joined%>
     </li>
     <br>
 <%end%>
 </p>
 
-<%= link_to 'Find a New Game!', new_player_playergame_path(@player)%>
+<%= link_to 'Find a New Game!', new_player_playergame_path(current_player)%>
 </br>

@@ -1,9 +1,10 @@
 # Specifications for the Rails Assessment
 
 Things to Fix:
-- errors for games and playergames
-- nav for signup - corinna?
-- can I scope the selection box?
+- errors for games and playergames - not working for some reason
+
+
+
 
 
 
