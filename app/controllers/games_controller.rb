@@ -64,9 +64,13 @@ class GamesController < ApplicationController
         elsif @game.dm_id == current_dm.id
             @game.destroy
             redirect_to dm_games_path(current_dm)
+        end
     end
 
 private
+    def set_dm
+        current_dm
+    end
 
     def set_game
         @game = Game.find_by_id(params[:id])

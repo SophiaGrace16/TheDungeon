@@ -60,6 +60,7 @@ class CharactersController < ApplicationController
         elsif @character.player_id == current_player.id
             @character.destroy
             redirect_to characters_path
+        end
     end
 
 private

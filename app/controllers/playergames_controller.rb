@@ -18,7 +18,6 @@ class PlayergamesController < ApplicationController
     def create
         #posts new form
         @playergame = current_player.playergames.build(playergame_params) #sets this to the current player
-        binding.pry
         if @playergame.save
             redirect_to player_playergame_path(current_player,@playergame)
         else
@@ -65,9 +64,13 @@ class PlayergamesController < ApplicationController
         elsif @playergame.player_id == current_player.id
             @playergame.destroy
             redirect_to player_playergames_path(current_player)
+        end
     end
 
 private
+    def set_player
+        current_player
+    end
 
     def set_playergame
         @playergame = Playergame.find_by_id(params[:id])

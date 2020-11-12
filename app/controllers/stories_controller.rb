@@ -59,6 +59,7 @@ class StoriesController < ApplicationController
         elsif  @story.dm_id == current_dm.id
             @story.destroy
             redirect_to stories_path
+        end
     end
 
 private
