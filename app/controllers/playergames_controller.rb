@@ -1,5 +1,5 @@
 class PlayergamesController < ApplicationController
-    before_action :set_game, only: [:show, :edit, :update, :destroy]
+    before_action :set_playergame, only: [:show, :edit, :update, :destroy]
     before_action :set_player
     before_action :redirect_if_player_not_logged_in
 
@@ -18,11 +18,11 @@ class PlayergamesController < ApplicationController
     def create
         #posts new form
         @playergame = current_player.playergames.build(playergame_params) #sets this to the current player
-        # binding.pry
+        binding.pry
         if @playergame.save
             redirect_to player_playergame_path(@player,@playergame)
         else
-            render 'new_player_playergame'
+            redirect_to new_player_playergame_path(@player)
         end
     end
 
@@ -66,11 +66,11 @@ private
         @player = Player.find_by_id(params[:player_id])
     end
 
-    def set_game
+    def set_playergame
         @playergame = Playergame.find_by_id(params[:id])
     end
 
     def playergame_params
-        params.require(:playergame).permit(:camp_name, :loot_found, :character, :date_joined, :coin_reward, :exp_gained, :game_notes, :player_host_name, :dm_id, :game_id)
+        params.require(:playergame).permit(:loot_found, :character, :date_joined, :coin_reward, :exp_gained, :game_notes, :dm_host_name, :game_id)
     end
 end

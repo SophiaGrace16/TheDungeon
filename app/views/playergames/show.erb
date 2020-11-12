@@ -1,23 +1,30 @@
-<b>Dungon_Master:</b>
+<h2>Your Game:</h2>
+
+<b>Dungon Master:</b>
 <%=@playergame.dm_host_name%>
 </br>
 <b>Campaign_Name:</b>
-<%=@playergame.camp_name%>
+<%camp = Game.find_by_id(@playergame.game_id)%>
+<%camp_name = camp.camp_name%>
+<%=camp_name%>
 </br>
 <b>Character:</b>
 <%=@playergame.character%>
 </br>
-<b>Date_You_joined:</b>
+<b>Date You joined:</b>
 <%=@playergame.date_joined%>
 </br>
-<b>Loot_Found:</b>
+<b>Loot Found:</b>
 <%=@playergame.loot_found%>
 </br>
-<b>Experience_Points_Gained:</b>
+<b>Experience Points Gained:</b>
 <%=@playergame.exp_gained%>
 </br>
-<b>Coin_Reward:</b>
+<b>Coin Reward:</b>
 <%=@playergame.coin_reward%>
 </br>
-<b>Game_Notes:</b>
+<b>Game Notes:</b>
 <%=@playergame.game_notes%>
+</br>
+<%= link_to "Need to Edit your Game?", edit_player_playergame_path(@player)%>
+<%= link_to("Delete this Game?", @playergame, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>

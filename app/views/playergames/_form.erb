@@ -9,13 +9,13 @@
 
 <%=form_for(@playergame) do |f|%>
 <%= f.label :dm_host_name, "Who is the DM?"%>
-<%= f.collection_select :dm_ids, Dm.all, :id, :username %>
+<%= f.collection_select :dm_host_name, Dm.all, :username, :username %>
 </br>
-<%= f.label :camp_name, "What is the Campaign Name?"%>
-<%= f.collection_select :game_ids, Game.all, :id, :camp_title %>
+<%= f.label :game_id, "What is the Campaign Name?"%>
+<%= f.collection_select :game_id, Game.all, :id, :camp_name %>
 </br>
 <%= f.label :character, "Which character are you using?"%>
-<%= f.collection_select :character_ids, current_player.character.all, :id, :name %>
+<%= f.collection_select :character, current_player.characters.all, :name, :name %>
 </br>
 <%= f.label :date_joined, "What day did you join the campaign?"%>
 <%= f.date_field :date_joined%>
