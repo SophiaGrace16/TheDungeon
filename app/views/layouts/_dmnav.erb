@@ -1,10 +1,12 @@
-<% if dm_logged_in? %>
+<%if dm_logged_in? %>
 <ul>
     Hey there <%= current_dm.username %>
     <%= link_to "Log out", dm_logout_path, method: :delete %>
     <%= link_to "Stories", stories_path%>
     <%= link_to "Games", dm_games_path(current_dm)%>
-</ul>
+</ul>  
+<%else%>
+    <%=link_to "Home", "/"%>
 <% end %>
 
 <h6> Don't smile too much... they will know you are up to something! </h6>
