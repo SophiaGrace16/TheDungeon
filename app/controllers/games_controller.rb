@@ -4,7 +4,7 @@ class GamesController < ApplicationController
     before_action :redirect_if_dm_not_logged_in
 
     def index
-        @games = Game.all
+        @games = current_dm.games.all
     end
 
     def new 

@@ -4,7 +4,7 @@ class PlayergamesController < ApplicationController
     before_action :redirect_if_player_not_logged_in
 
     def index
-        @playergames = Playergame.all
+        @playergames = current_player.playergames.all
     end
 
     def new 
