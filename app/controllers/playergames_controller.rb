@@ -60,8 +60,11 @@ class PlayergamesController < ApplicationController
 
     def destroy
         #deletes the game
-        @playergame.destroy
-        redirect_to player_playergames_path(current_player)
+        if @playergame.player_id != current_player.id
+            redirect_to player_playergames_path(current_player)
+        elsif @playergame.player_id == current_player.id
+            @playergame.destroy
+            redirect_to player_playergames_path(current_player)
     end
 
 private

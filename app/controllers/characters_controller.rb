@@ -55,8 +55,11 @@ class CharactersController < ApplicationController
 
     def destroy
         #deletes the character
-        @character.destroy
-        redirect_to characters_path
+        if @character.player_id != current_player.id
+            redirect_to characters_path
+        elsif @character.player_id == current_player.id
+            @character.destroy
+            redirect_to characters_path
     end
 
 private

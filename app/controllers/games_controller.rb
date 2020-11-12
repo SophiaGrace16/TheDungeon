@@ -25,7 +25,7 @@ class GamesController < ApplicationController
     def edit
         if @game.dm_id != current_dm.id
             redirect_to dm_games_path(current_dm)
-        elsif @game.dm_id ==current_dm.id
+        elsif @game.dm_id == current_dm.id
             if !@game
                 redirect_to dm_games_path(current_dm)
             end
@@ -59,8 +59,11 @@ class GamesController < ApplicationController
 
     def destroy
         #deletes the game
-        @game.destroy
-        redirect_to dm_games_path(current_dm)
+        if @game.dm_id != current_dm.id
+            redirect_to dm_games_path(current_dm)
+        elsif @game.dm_id == current_dm.id
+            @game.destroy
+            redirect_to dm_games_path(current_dm)
     end
 
 private

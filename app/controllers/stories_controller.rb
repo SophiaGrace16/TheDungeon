@@ -53,10 +53,12 @@ class StoriesController < ApplicationController
         end
     end
 
-    def destroy
-        #deletes the story
-        @story.destroy
-        redirect_to stories_path
+    def destroy #deletes the story
+        if @story.dm_id != current_dm.id
+            redirect_to stories_path
+        elsif  @story.dm_id == current_dm.id
+            @story.destroy
+            redirect_to stories_path
     end
 
 private
