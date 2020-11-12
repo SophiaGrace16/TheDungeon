@@ -23,8 +23,12 @@ class CharactersController < ApplicationController
 
     def edit
         #gets edit form
-        if !@character
+        if @character.player_id != current_player.id
             redirect_to characters_path
+        elsif @character.player_id == current_player.id
+            if !@character
+                redirect_to characters_path
+            end
         end
     end
 

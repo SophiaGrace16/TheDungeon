@@ -28,8 +28,12 @@ class PlayergamesController < ApplicationController
 
     def edit
         #gets edit form
-        if !@playergame
+        if @playergame.player_id != current_player.id
             redirect_to player_playergames_path(@player)
+        elsif @playergame.player_id == current_player.id
+            if !@playergame
+                redirect_to player_playergames_path(@player)
+            end
         end
     end
 

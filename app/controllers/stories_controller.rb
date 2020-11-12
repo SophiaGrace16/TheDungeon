@@ -23,8 +23,12 @@ class StoriesController < ApplicationController
 
     def edit
         #gets edit form
-        if !@story
+        if @story.dm_id != current_dm.id
             redirect_to stories_path
+        elsif  @story.dm_id == current_dm.id
+            if !@story
+                redirect_to stories_path
+            end
         end
     end
 

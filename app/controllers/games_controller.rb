@@ -25,8 +25,12 @@ class GamesController < ApplicationController
 
     def edit
         #gets edit form
-        if !@game
+        if @game.dm_id != current_dm.id
             redirect_to dm_games_path(@dm)
+        elsif @game.dm_id ==current_dm.id
+            if !@game
+                redirect_to dm_games_path(@dm)
+            end
         end
     end
 
