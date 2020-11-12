@@ -4,9 +4,6 @@
     <%= link_to "Log out", player_logout_path, method: :delete %>
     <%= link_to "Characters",characters_path%>
     <%= link_to "Games",player_playergames_path(current_player)%>
-<% else %>
-    <%= link_to "Need to Signup?", player_signup_path%>
-
 </ul>
 <% end %>
 

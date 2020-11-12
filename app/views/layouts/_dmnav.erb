@@ -1,8 +1,5 @@
-<% if !dm_logged_in? %>
+<% if dm_logged_in? %>
 <ul>
-    <%= link_to "Need to Signup?", dm_signup_path%>
-    <%= link_to "Home", "/"%>  
-<% else %>
     Hey there <%= current_dm.username %>
     <%= link_to "Log out", dm_logout_path, method: :delete %>
     <%= link_to "Stories", stories_path%>

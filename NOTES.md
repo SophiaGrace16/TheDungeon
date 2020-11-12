@@ -1,5 +1,12 @@
 # Specifications for the Rails Assessment
 
+Things to Fix:
+- errors for games and playergames
+- nav for signup - corinna?
+- can I scope the selection box?
+
+
+
 Specs:
 - [x] Using Ruby on Rails for the project
 - [x] Include at least one has_many relationship (x has_many y; e.g. User has_many Recipes) 
