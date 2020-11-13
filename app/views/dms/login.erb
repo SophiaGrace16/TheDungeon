@@ -7,11 +7,11 @@ If you have please enter your username and password, if you are new click the li
 <%= form_for(:dm) do |f|%>
     <%= f.label :username%>
     <%= f.text_field :username%>
-</br>
+<br/>
     <%= f.label :password%>
     <%= f.password_field :password%>
-</br>
+<br/>
     <%= f.submit "Log In"%>
 <%end%>
-</br>
+<br/>
 OR...<%= link_to "Need to Signup?", dm_signup_path%>

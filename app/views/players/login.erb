@@ -7,13 +7,13 @@ If you have please enter your username and password, if you are new click the li
 <%= form_for(:player) do |f|%>
     <%= f.label :username%>
     <%= f.text_field :username%>
-</br>
+<br/>
     <%= f.label :password%>
     <%= f.password_field :password%>
-</br>
+<br/>
     <%= f.submit "Log In"%>
 <%end%>
 OR... 
 <%= link_to "Sign Up or Log In with Google!",'/auth/google_oauth2'%>
-</br>
+<br/>
 OR...<%= link_to "Need to Signup?", player_signup_path%>

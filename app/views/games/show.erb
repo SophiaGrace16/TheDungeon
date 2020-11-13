@@ -1,4 +1,4 @@
-<h1>Here is your game!</h1>
+<h2>Your Game:</h2>
 
 <b>Is this game active?:</b>
 <%if @game.game_active == true %>
@@ -6,27 +6,27 @@
 <%elsif @game.game_active == false%>
 <%="No we finished that game!"%>
 <%end%>
-</br>
+<br/>
 <b>Campaign Name:</b>
 <%=@game.camp_name%>
-</br>
+<br/>
 <b>Date Game Started:</b>
 <%=@game.date_started%>
-</br>
+<br/>
 <b>Sessions Played:</b>
 <%=@game.sessions_played%>
-</br>
+<br/>
 <b>Loot Found:</b>
 <%=@game.loot_found%>
-</br>
+<br/>
 <b>Experience Points Gained:</b>
 <%=@game.exp_gained%>
-</br>
+<br/>
 <b>Coin Reward:</b>
 <%=@game.coin_reward%>
-</br>
+<br/>
 <b>Game Notes:</b>
 <%=@game.game_notes%>
-</br>
+<br/>
 <%= link_to "Need to Edit your Game?", edit_dm_game_path(current_dm)%>
 <%= link_to("Delete this Game?", @game, method: :delete, data:{confirm: "Are you sure? You can't undo this."}) %>

@@ -11,28 +11,28 @@
 
 <%= f.label :game_active, "Is this game active?"%>
 <%= f.check_box :game_active, {checked: true, unchecked: false} %>
-</br>
+<br/>
 <%= f.label :camp_name, "Campaign Name:"%>
 <%= f.text_field :camp_name%>
-</br>
+<br/>
 <%= f.label :date_started, "Date Game Started?"%>
 <%= f.date_field :date_started%>
-</br>
+<br/>
 <%= f.label :sessions_played, "How many sessions have you played?"%>
 <%= f.number_field :sessions_played%>
-</br>
+<br/>
 <%= f.label :loot_found, "What loot was found?"%>
 <%= f.text_area :loot_found%>
-</br>
+<br/>
 <%= f.label :exp_gained, "Experience points gained?"%>
 <%= f.number_field :exp_gained,in: 0...10000%>
-</br>
+<br/>
 <%= f.label :coin_reward, "Coin Reward?"%>
 <%= f.number_field :coin_reward,in: 0...10000%>
-</br>
+<br/>
 <%= f.label :game_notes, "Any notes?"%>
 <%= f.text_area :game_notes%>
-</br>
+<br/>
  <%= f.submit "Submit Your Game!" %>
  <%end%>
  <%= link_to "Cancel", dm_games_path(current_dm)%>

@@ -11,34 +11,34 @@
 
 <%= f.label :title, "Title:"%>
 <%= f.text_field :title%>
-</br>
+<br/>
 <%= f.label :setting, "Setting:"%>
 <%= f.text_field :setting%>
-</br>
+<br/>
 <%= f.label :camp_type, "Campaign Type:"%>
 <%= f.text_field :camp_type%>
-</br>
+<br/>
 <%= f.label :final_boss, "Final Boss:"%>
 <%= f.text_field :final_boss%>
-</br>
+<br/>
 <%= f.label :item_rewards, "Item Rewards:"%>
 <%= f.text_field :item_reward%>
-</br>
+<br/>
 <%= f.label :coin_reward, "Coin Reward:"%>
 <%= f.number_field :coin_reward,in: 0...10000%>
-</br>
+<br/>
 <%= f.label :exp_reward, "Experience Reward:"%>
 <%= f.number_field :exp_reward,in: 0...10000%>
-</br>
+<br/>
 <%= f.label :summary, "Summary:"%>
 <%= f.text_area :summary%>
-</br>
+<br/>
 <%= f.label :difficulty, "Difficulty:"%>
 <%= f.text_field :difficulty%>
-</br>
+<br/>
 <%= f.label :story_link, "Link to the Story:"%>
 <%= f.text_field :story_link%>
-</br>
+<br/>
  <%= f.submit "Submit Your Story!" %>
  <%= link_to "Cancel", stories_path%>
  <%end%>
