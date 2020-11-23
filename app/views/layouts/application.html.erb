@@ -13,7 +13,7 @@
   <body>
     <%= yield %>
   </body>
-</div>
+ </div>
 
   <footer>
     <%if current_player%>
@@ -21,10 +21,11 @@
     <%elsif current_dm%>
         <%=render 'layouts/dmnav'%>
     <%end%>
-  
   </footer>
 
-  <img src="bottom.png" class="rounded mx-auto d-block" alt="Dungeons & Dragons">
+<div class="div-c">
+  <img src="https://i.imgur.com/XjSOK3q.png" class="img-fluid" alt="Dungeons & Dragons">
+</div>
 
 
 </html>
