@@ -9,10 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('dice.png') %>
   </head>
-
+<div class="jumbotron">
   <body>
     <%= yield %>
   </body>
+</div>
 
   <footer>
     <%if current_player%>
@@ -22,6 +23,8 @@
     <%end%>
   
   </footer>
+
+  <img src="bottom.png" class="rounded mx-auto d-block" alt="Dungeons & Dragons">
 
 
 </html>

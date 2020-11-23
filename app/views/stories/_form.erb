@@ -1,9 +1,11 @@
 <div class="errors">
 <% if @story.errors.any? %>
+<div class="alert alert-dismissible alert-warning"> 
     <h3>The story wasn't saved because:</h3>
     <ul>
     <li> <%= @story.errors.full_messages.to_sentence %> </li>
     </ul>
+</div>
 <% end %>
 </div>
 
