@@ -3,7 +3,7 @@ This is an interactive database website where you can choose to be a player or a
 
 # Install Instructions
 In order to use this database, clone the repository in your terminal with the following:
-git clone git@github.com:SophiaGrace16/sinatra-project
+git clone git@github.com:SophiaGrace16/TheDungeon
 
 Then use the "shotgun" command in your terminal to start up a local server. Enter your web browers an enter http://localhost:9393/. Then interact as normal.
 
